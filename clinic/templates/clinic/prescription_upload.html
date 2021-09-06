@@ -1,0 +1,27 @@
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Upload new Prescription</h1>
+<div class="create-prescription">
+	<div class="card hoverable">
+		<div class="card-content">
+			<form class="site-form" action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+
+				{{form|crispy}}
+				<br>
+				<br>
+				<input type="submit" class="btn-large" value="Upload">
+			</form>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<div class="back">
+	<a href="{% url 'list'%}"><button class="btn btn-primary btn-large pulse">Go Back</button></a>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,263 @@
+
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load bootstrap %}
+
+{% load crispy_forms_field %}
+
+
+<head>
+
+
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+   ul#id_imagelesion li{
+    display: inline-block;
+    }
+  </style>
+  <style>
+   ul#id_lesion_site li{
+    display: inline-block;
+    }
+  </style>
+  <style media="screen">
+    .new-select {
+    display: inline-block;
+  }
+  </style>
+    <style>
+      .form-control {
+        margin: .25px;
+      }
+      .inline {
+        margin: 6px;
+        color: #f33;
+      }
+      .clles {
+        margin: 6px;
+        color: #f33;
+      }
+    }
+    .colls {
+      margin: 6px;
+      color: #f33;
+    }
+      .tinymce{
+
+      content: "Reference ";
+  }
+
+     .vital{
+     height:90px;
+     text-align: right;
+  }
+     .exam{
+     height:90px;
+     text-align: left;
+  }
+    .dd{
+    height:90px;
+    text-align: left;
+  }
+    .dist{
+    height:90px;
+
+
+
+    .select2-selection__rendered{
+    height:3.4375rem;
+
+  }
+
+    #display {
+      background-color: white;
+      align: center;
+      border-radius: 4px;
+      padding-right: 10px;
+    }
+    #basic {
+      background-color: maroon;
+      text-align: center;
+      border-radius: 4px;
+      padding-right: 10px;
+      float: left;
+    }
+    #shape {
+      background-color: #DB9A2B;
+      text-align: center;
+      border-radius: 4px;
+      padding-right: 10px;
+    }
+    #margin {
+      background-color: #E9CE60;
+      text-align: center;
+      border-radius: 4px;
+      padding-right: 10px;
+      float: left;
+    }
+
+      #color {
+        background-color: #4E842F;
+        text-align: center;
+        border-radius: 4px;
+        padding-right: 10px;
+        float: left;
+      }
+      .colorr {
+      display: inline-block;
+    }
+
+    </style>
+    <style>
+      .bodyp {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        right:0;
+        top:0;
+
+    }
+    </style>
+
+</head>
+
+{% block content %}
+
+
+<div>
+  <form method="post" novalidate>
+    {% csrf_token %}
+  {{ form.media}}
+
+
+    {% include 'clinic/bs4_form.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  {% include 'clinic/sign.html' with form=form %}
+
+
+
+   <div  id="imagelesion" >
+
+                                   <input type="radio" name="one" label = "Choose One"  />
+                                   <div class="new-select">
+
+                                     <li class="new-select">
+                                       <label tabindex="-1">
+                                           <img src="{% static 'skinlesion/head.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.0}}
+                                       </label>
+                                       </li>
+                                       <li class="new-select">
+                                       <label tabindex="-2">
+                                           <img src="{% static 'skinlesion/papp.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.1 }}
+                                       </label>
+                                       </li>
+                                   <li class="new-select">
+                                     <label tabindex="-3">
+                                         <img src="{% static 'skinlesion/patch.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.2 }}
+                                     </label>
+                                 </li>
+                                <li class="new-select">
+                                   <label tabindex="-4">
+                                       <img src="{% static 'skinlesion/plauqe.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.3 }}
+                                   </label>
+                          </li>
+                      <li class="new-select">
+                                 <label tabindex="-5">
+                                     <img src="{% static 'skinlesion/nod.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.4 }}
+                                 </label>
+                      </li>
+                     <li class="new-select">
+                               <label tabindex="-6">
+                                   <img src="{% static 'skinlesion/pustule.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.5 }}
+                               </label>
+                      </li>
+                    <li class="new-select">
+                             <label tabindex="-7">
+                                 <img src="{% static 'skinlesion/vesicle.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.6 }}
+                             </label>
+                           </li>
+                           <label tabindex="-8">
+                               <img src="{% static 'skinlesion/comdon.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.7 }}
+                           </label>
+
+                         <label tabindex="-9">
+                             <img src="{% static 'skinlesion/wheal.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.8 }}
+                         </label>
+
+                       <label tabindex="-10">
+                           <img src="{% static 'skinlesion/bur.jpg' %}"   width="70" height="70" alt="">{{ form.lesion_site.9 }}
+                       </label>
+
+
+
+</div>
+
+
+
+<div class="">
+  {% if location_image.image %}
+ <img src="{{location_image.image.url }}">
+ {% else %}
+ <img src="{% static 'img/default.jpg' %}">
+ {% endif %}
+</div>
+
+
+  </div>nammmmm
+
+site_image_mark on it
+
+  <div  id="bodypic" class="bodyp">
+                      <img class="img-fluid rounded"   src="{% static 'skinlesion/body2.png' %}" height="600%" width="600%"/>
+                      <p>site number choose</p> <!--for testing-->
+                  </div>
+
+
+
+
+   <!-- TABLE CONTENT SUPPRESSED FOR BREVITY'S SAKE -->
+
+
+ <!-- THE MODAL WE WILL BE USING -->
+
+
+
+
+{% endblock content %}
+
+{% block js %}
+
+
+
+
+
+<script type="text/javascript">
+CKEDITOR.addCss(".cke_editable{cursor:text; font-size: 22px; font-family: Arial, sans-serif;}");
+</script>
+
+
+
+
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>  <!-- JQUERY HERE -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
+
+
+
+
+{% endblock js %}

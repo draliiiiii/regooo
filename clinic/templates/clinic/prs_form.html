@@ -1,0 +1,18 @@
+
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>click here to backup database to local computer then you can restor</title>
+  </head>
+
+
+<form method="post" novalidate>
+  {% csrf_token %}
+{{ form.media}}
+{{ form.as_p }}
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

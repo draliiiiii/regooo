@@ -1,0 +1,23 @@
+{% load static %} {% block content %}
+<p><a class="btn btn-default" >print all Listing</a></p>
+<table class="table">
+    <tr>
+        <td>name</td>
+        <td>email</td>
+          <td>visit</td>
+
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+
+        <td>{{ obj.patient_name }}</td>
+        <td>{{ obj.email }}</td>
+
+        <a href="/visits/{{patient.id}}">Link</a>
+<td><small><a href="{% url 'visit-auoto' patient.id %}">Add Visit</a></small></td>
+
+
+
+    </tr>
+    {% endfor %}
+    {% endblock %}
